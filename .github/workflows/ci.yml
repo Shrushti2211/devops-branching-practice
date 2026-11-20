@@ -1,0 +1,29 @@
+name: Basic CI
+
+on:
+  push:
+    branches:
+      - main
+      - development
+      - 'feature/**'
+
+  pull_request:
+    branches:
+      - development
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check README exists
+        run: test -f README.md
+
+      - name: Check README is not empty
+        run: test -s README.md
+
+      - name: Display success message
+        run: echo "All basic checks passed!"
