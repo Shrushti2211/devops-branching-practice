@@ -1,1 +1,4 @@
 Hello from Developer A
+Hello from  Developer B
+Hello from Developer A and Developer B.
+Conflict resolved successfully.
